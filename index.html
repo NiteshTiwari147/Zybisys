@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+</head>
+<body>
+    <div id="sidebar" class="collapsed">
+        <form class="form" id="form">
+            <div class="formHeading">
+                <h2>Creative Creating</h2>
+                <div href="#" class="close" id="closeBtn"></div>
+            </div>
+            <div class="formContent">
+                <div class="form-control">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" placeholder="Enter your title" />
+                </div>
+                <div class="form-control">
+                    <label for="subTitle">Sub-Title</label>
+                    <input type="text" id="subTitle" placeholder="Enter your sub title" />
+                </div>
+                <div class="form-control">
+                    <label>Background color</label>
+                    <div class="clrPanel" id="clrPanel">
+                        <button  type="button"  class="colorBtn" id="clr1"></button>
+                        <button  type="button" class="colorBtn" id="clr2"></button>
+                        <button  type="button" class="colorBtn" id="clr3"></button>
+                        <button  type="button" class="colorBtn" id="clr4"></button>
+                        <button  type="button" class="colorBtn" id="clr5"></button>
+                    </div>                
+                </div>
+            </div>
+            <div class="formError" id="formError">
+                Please fill all the information
+            </div>
+            <button type="submit" id="formBtn" class="formBtn">Done</button>
+        </form>
+    </div>
+    <div id="content">
+        <div class="container">
+            <div class="filterContainer" id="filterContainer">
+                <h2>Filter By</h2>
+                <div class='filters'>
+                    <div class="colorFilter">
+                        <label>color:</label>
+                        <div class="clrPanel" id="clrPaletteFilter">
+                            <button  type="button" class="filterClrBtn" id="clr1"></button>
+                            <button  type="button" class="filterClrBtn" id="clr2"></button>
+                            <button  type="button" class="filterClrBtn" id="clr3"></button>
+                            <button  type="button" class="filterClrBtn" id="clr4"></button>
+                            <button  type="button" class="filterClrBtn" id="clr5"></button>
+                        </div>       
+                    </div>
+                    <div class="titleFilter">
+                        <div class="form-control">
+                            <label for="titleSearch">Title/Subtitle</label>
+                            <input type="text" id="titleSearch" onkeyup="searchCard()" placeholder="Search your title here" />
+                            <div class="searchError" id="searchError">
+                                No result found 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="progressBarContainer">
+                <div id="progressBar">
+                    <div id="barStatus"></div>
+                </div>
+                <div class="cardCount" id="cardCount">
+                    0/5 Creatives
+                </div>
+            </div>
+            <button id="addCardBtn" class="addCardBtn">+    Add creative</button>
+            <div class="addCardError" id="addCardError">
+                Card limit exceeded 
+            </div>
+            <div class="creativeCardContainer" id="cardContainer">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
