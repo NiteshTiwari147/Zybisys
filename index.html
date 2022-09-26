@@ -6,82 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <div id="sidebar" class="collapsed">
-        <form class="form" id="form">
-            <div class="formHeading">
-                <h2>Creative Creating</h2>
-                <div href="#" class="close" id="closeBtn"></div>
+    <div id="sidebar">
+        <div class="watchListContainer" id="watchListContainer">
+            <div class="watchListHeading">
+                <h1>Watchlist</h1>
             </div>
-            <div class="formContent">
-                <div class="form-control">
-                    <label for="title">Title</label>
-                    <input type="text" id="title" placeholder="Enter your title" />
+            <div class="watchListContent" id="watchListContent">
+                <div class="dropPointCard">
+                    <div class="dropPoint" id="dropPoint">
+                        <h3>Drop here</h3>
+                    </div>
                 </div>
-                <div class="form-control">
-                    <label for="subTitle">Sub-Title</label>
-                    <input type="text" id="subTitle" placeholder="Enter your sub title" />
-                </div>
-                <div class="form-control">
-                    <label>Background color</label>
-                    <div class="clrPanel" id="clrPanel">
-                        <button  type="button"  class="colorBtn" id="clr1"></button>
-                        <button  type="button" class="colorBtn" id="clr2"></button>
-                        <button  type="button" class="colorBtn" id="clr3"></button>
-                        <button  type="button" class="colorBtn" id="clr4"></button>
-                        <button  type="button" class="colorBtn" id="clr5"></button>
-                    </div>                
-                </div>
+                <!-- <div class="watchListError" id="watchListError">
+                    No item to show
+                </div> -->
             </div>
-            <div class="formError" id="formError">
-                Please fill all the information
-            </div>
-            <button type="submit" id="formBtn" class="formBtn">Done</button>
-        </form>
+        </div>
     </div>
     <div id="content">
         <div class="container">
+            <h1>Animeshow</h1>
             <div class="filterContainer" id="filterContainer">
-                <h2>Filter By</h2>
                 <div class='filters'>
-                    <div class="colorFilter">
-                        <label>color:</label>
-                        <div class="clrPanel" id="clrPaletteFilter">
-                            <button  type="button" class="filterClrBtn" id="clr1"></button>
-                            <button  type="button" class="filterClrBtn" id="clr2"></button>
-                            <button  type="button" class="filterClrBtn" id="clr3"></button>
-                            <button  type="button" class="filterClrBtn" id="clr4"></button>
-                            <button  type="button" class="filterClrBtn" id="clr5"></button>
-                        </div>       
-                    </div>
                     <div class="titleFilter">
-                        <div class="form-control">
-                            <label for="titleSearch">Title/Subtitle</label>
-                            <input type="text" id="titleSearch" onkeyup="searchCard()" placeholder="Search your title here" />
-                            <div class="searchError" id="searchError">
-                                No result found 
-                            </div>
+                        <input type="text" id="titleSearch" onkeyup="searchCard()" placeholder="Type here to search anime by title" />
+                    </div>
+                    <div class="subFilters">
+                        <div class="genreFilter">
+                            <select class="subFilter" id="genre">
+                                <option value="0">All genre</option>
+                            </select>
+                        </div>
+                        <div class="genreFilter">
+                            <select class="subFilter" id="ratings">
+                                <option value="0">All rating</option>
+                                <option value="1">Below 5</option>
+                                <option value="2">5 to 8</option>
+                                <option value="3">Above 8</option>
+                            </select>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="progressBarContainer">
-                <div id="progressBar">
-                    <div id="barStatus"></div>
-                </div>
-                <div class="cardCount" id="cardCount">
-                    0/5 Creatives
-                </div>
-            </div>
-            <button id="addCardBtn" class="addCardBtn">+    Add creative</button>
-            <div class="addCardError" id="addCardError">
-                Card limit exceeded 
-            </div>
-            <div class="creativeCardContainer" id="cardContainer">
+            <h2>Anime List: </h2>
+            <div class="cardContainer" id="cardContainer">
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
